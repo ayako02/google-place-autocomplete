@@ -1,0 +1,47 @@
+{
+  "env": {
+    "serviceworker": true,
+    "browser": true,
+    "es6": true
+  },
+  "extends": ["airbnb", "plugin:prettier/recommended", "plugin:react/recommended", "plugin:import/errors", "plugin:import/warnings"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "prettier", "react-hooks"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "linebreak-style": 0,
+    "react/forbid-prop-types": 0,
+    "no-plusplus": [1, { "allowForLoopAfterthoughts": true }],
+    "react/jsx-props-no-spreading": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/jsx-one-expression-per-line": [1, { "allow": "single-child" }]
+  }
+}
