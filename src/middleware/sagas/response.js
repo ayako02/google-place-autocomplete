@@ -23,6 +23,6 @@
 //   }
 // }
 
-export default function* Test() {
+export default function* Response() {
   // yield all([takeEvery(actions.GET.BRANDING, getBrandingSaga)]);
 }

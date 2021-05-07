@@ -4,7 +4,7 @@ import storage from 'redux-persist/lib/storage';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 
-import { rootReducer } from 'middleware/reducers/index';
+import { rootReducer } from 'middleware/reducers';
 
 const persistConfig = { key: 'root', storage, blacklist: [] };
 

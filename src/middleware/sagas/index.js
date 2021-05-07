@@ -1,7 +1,7 @@
 import { all } from 'redux-saga/effects';
 
-import Test from './test';
+import Response from './response';
 
 export default function* rootSaga() {
-  yield all([Test()]);
+  yield all([Response()]);
 }

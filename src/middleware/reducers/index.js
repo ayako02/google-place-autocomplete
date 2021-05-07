@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import TestReducer from './test';
+import TestReducer from './response';
 
 const appReducer = combineReducers({
   TestReducer,
