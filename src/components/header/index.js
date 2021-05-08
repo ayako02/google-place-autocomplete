@@ -9,7 +9,7 @@ const Header = () => (
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" className="header--title">
-          Location Search
+          Google Location Search
         </Typography>
       </Toolbar>
     </AppBar>

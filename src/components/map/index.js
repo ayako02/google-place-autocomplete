@@ -1,30 +1,43 @@
 import React from 'react';
-import GoogleMapReact from 'google-map-react';
+import PropTypes from 'prop-types';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 
-import RoomIcon from '@material-ui/icons/Room';
+import { memo } from 'utils/react';
 
-const GoogleMap = () => {
-  const location = {
-    center: {
-      lat: 59.95,
-      lng: 30.33,
-    },
-    zoom: 11,
-  };
+import { mapContainerStyle, mapStyle } from './style';
+
+import AutoCompleteTextInput from '../textinput';
+
+const GOOGLE_API_KEY = 'AIzaSyCgqTOvoVMTZxpDNTBjYMphYIraj7jqmyo';
+
+const GoogleMap = ({ google, location, address, onSelect, onChange }) => {
+  const { lat, lng } = location;
 
   return (
-    <div className="map-container">
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyCgqTOvoVMTZxpDNTBjYMphYIraj7jqmyo' }}
-        defaultCenter={location.center}
-        defaultZoom={location.zoom}
-      >
-        <div lat={59.955413} lng={30.337844}>
-          <RoomIcon />
-        </div>
-      </GoogleMapReact>
-    </div>
+    <>
+      <div className="pa4 flex flex-column items-center">
+        <AutoCompleteTextInput address={address} onChange={onChange} onSelect={onSelect} />
+      </div>
+
+      <Map google={google} style={mapStyle} containerStyle={mapContainerStyle} initialCenter={{ lat, lng }} center={{ lat, lng }}>
+        <Marker position={{ lat, lng }} />
+      </Map>
+    </>
   );
 };
 
-export default GoogleMap;
+GoogleMap.defaultProps = { address: '' };
+
+GoogleMap.propTypes = {
+  address: PropTypes.string,
+  google: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onSelect: PropTypes.func.isRequired,
+  location: PropTypes.object.isRequired,
+};
+
+export default memo(
+  GoogleApiWrapper({
+    apiKey: GOOGLE_API_KEY,
+  })(GoogleMap)
+);
