@@ -1,23 +1,17 @@
-// import { actions } from '../actions/branding';
+import { actions } from '../actions/response';
 
-// const { BRANDING_DATA, BRANDING_DETAIL, BRANDING_ID } = actions.PUT;
+const { SEARCHED_HISTORIES } = actions.PUT;
 
-const initialState = {};
+const initialState = { searchedResponses: [] };
 
-const TestReducer = (state = initialState, action = {}) => {
+const ResponseReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    // case BRANDING_DETAIL:
-    //   return { ...state, brandingDetail: action.payload };
-
-    // case BRANDING_ID:
-    //   return { ...state, brandingID: action.payload };
-
-    // case BRANDING_DATA:
-    //   return { ...state, brandingData: action.payload };
+    case SEARCHED_HISTORIES:
+      return { ...state, searchedResponses: action.payload };
 
     default:
       return state;
   }
 };
 
-export default TestReducer;
+export default ResponseReducer;

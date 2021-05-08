@@ -1,28 +1,22 @@
-// import { takeEvery, all, call, put } from 'redux-saga/effects';
+import { takeEvery, all, call } from 'redux-saga/effects';
 
-// import BaseInstance from 'providers/base-instance';
+import BaseInstance from 'providers/base-instance';
 
-// import { actions, putBrandingData } from '../actions/branding';
+import { actions } from '../actions/response';
 
-// import endpoint from './endpoint';
+// Note: A sample saga to display on calling API
 
-// const getBranding = async ({ token, body }) =>
-//   BaseInstance.post(endpoint.branding.get, body, {
-//     headers: {
-//       gromadmintoken: token,
-//     },
-//   });
+const getResponses = async ({ body = {} }) => BaseInstance.get('endpoint', body, {});
 
-// function* getBrandingSaga({ payload }) {
-//   const { token, id } = payload;
-//   const body = { branding_id: id };
-//   const { data } = yield call(getBranding, { token, body });
-//   const { success } = data;
-//   if (success) {
-//     yield put(putBrandingData(data));
-//   }
-// }
+function* getResponseSaga() {
+  try {
+    const response = yield call(getResponses, {});
+    console.log({ response });
+  } catch (err) {
+    throw new Error(err);
+  }
+}
 
 export default function* Response() {
-  // yield all([takeEvery(actions.GET.BRANDING, getBrandingSaga)]);
+  yield all([takeEvery(actions.GET.RESPONSES, getResponseSaga)]);
 }
