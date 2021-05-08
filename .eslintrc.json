@@ -4,7 +4,7 @@
     "browser": true,
     "es6": true
   },
-  "extends": ["airbnb", "plugin:prettier/recommended", "plugin:react/recommended", "plugin:import/errors", "plugin:import/warnings"],
+  "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react", "plugin:import/errors", "plugin:import/warnings"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -28,7 +28,6 @@
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-
     "react/jsx-filename-extension": [
       1,
       {
