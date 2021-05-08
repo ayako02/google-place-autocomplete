@@ -1,7 +1,52 @@
 .main-container {
-  .header,
-  .header--title {
-    flex-grow: 1;
+  .container--section {
+    .section--header {
+      display: flex;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      min-height: 150px;
+      background-image: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
+
+      .logo {
+        display: flex;
+        color: white;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        .logo--icon {
+          font-size: 3.5rem;
+        }
+      }
+
+      .MuiCard-root {
+        top: 90%;
+        width: 90%;
+        z-index: 999;
+        overflow: visible;
+        position: absolute;
+      }
+
+      .MuiFormControl-root {
+        min-width: 100%;
+        .MuiOutlinedInput-root {
+          padding: 1rem;
+          .MuiOutlinedInput-input {
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    .section--bottom {
+      padding: 2rem;
+      margin-top: 560px;
+      .MuiList-root {
+        max-width: 100%;
+      }
+    }
   }
 
   .map-container {
