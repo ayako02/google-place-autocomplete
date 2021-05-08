@@ -4,6 +4,7 @@ import React, { Children } from 'react';
 
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { memo } from 'utils/react';
 
@@ -12,15 +13,15 @@ import { activeItemStyle, inactiveItemStyle } from './style';
 const AutoCompleteDropdown = ({ isLoading, suggestions, getSuggestionItemProps }) => (
   <div className="autocomplete-dropdown-container">
     {isLoading ? (
-      <div>Loading...</div>
+      <CircularProgress />
     ) : (
       Children.toArray(
         suggestions.map(suggestion => {
           const active = get(suggestion, 'active', false);
           const description = get(suggestion, 'description', '');
 
-          const className = active ? 'suggestion-item--active' : 'suggestion-item';
           const style = active ? activeItemStyle : inactiveItemStyle;
+          const className = active ? 'suggestion-item--active' : 'suggestion-item';
 
           return (
             <ListItem {...getSuggestionItemProps(suggestion, { className, style })}>

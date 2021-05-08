@@ -5,6 +5,7 @@ export const mapContainerStyle = {
   maxWidth: '100%',
   height: '70%',
   minWidth: '100%',
+  marginTop: '2rem',
   paddingLeft: '2rem',
   paddingRight: '2rem',
 };

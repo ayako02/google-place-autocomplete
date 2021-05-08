@@ -2,13 +2,14 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import PlacesAutocomplete from 'react-places-autocomplete';
 
-import TextField from '@material-ui/core/TextField';
+import ClearIcon from '@material-ui/icons/Clear';
+import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput } from '@material-ui/core';
 
 import { memo } from 'utils/react';
 
 import AutoCompleteDropdown from './Dropdown';
 
-const AutoCompleteTextInput = ({ address, onSelect, onChange }) => {
+const AutoCompleteTextInput = ({ address, onSelect, onChange, onTextClear }) => {
   const [incomingSuggestions, setSuggestions] = useState([]);
 
   return (
@@ -20,13 +21,26 @@ const AutoCompleteTextInput = ({ address, onSelect, onChange }) => {
         }
         return (
           <>
-            <TextField
-              label="Location"
-              variant="outlined"
-              {...getInputProps({
-                placeholder: 'Search Places ...',
-              })}
-            />
+            <FormControl variant="outlined">
+              {/* <InputLabel htmlFor="outlined-adornment-password">Location</InputLabel> */}
+              <OutlinedInput
+                autoComplete
+                autoFocus
+                labelWidth={0}
+                variant="outlined"
+                {...getInputProps({
+                  placeholder: 'Search Places ...',
+                })}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton edge="end" onClick={onTextClear}>
+                      <ClearIcon />
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
+
             <AutoCompleteDropdown isLoading={loading} suggestions={incomingSuggestions} getSuggestionItemProps={getSuggestionItemProps} />
           </>
         );
@@ -41,6 +55,7 @@ AutoCompleteTextInput.propTypes = {
   address: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onSelect: PropTypes.func.isRequired,
+  onTextClear: PropTypes.func.isRequired,
 };
 
 export default memo(AutoCompleteTextInput);
