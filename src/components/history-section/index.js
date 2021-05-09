@@ -4,9 +4,9 @@ import isEmpty from 'lodash.isempty';
 
 import ClearIcon from '@material-ui/icons/Clear';
 
-import { List, ListItem, IconButton, ListItemText } from '@material-ui/core';
+import { List, ListItem, IconButton, ListItemText, Divider } from '@material-ui/core';
 
-const HistorySection = ({ histories, onHistoryClear }) => (
+const HistorySection = ({ histories, onHistoryClear, onSelect }) => (
   <div className="mt3">
     <div className="flex flex-row justify-between items-center">
       <h2>Your searched histories</h2>
@@ -20,11 +20,12 @@ const HistorySection = ({ histories, onHistoryClear }) => (
         <h4 className="i silver">No histories</h4>
       ) : (
         Children.toArray(
-          histories.map(item => (
+          histories.map(location => (
             <List component="div" disablePadding>
-              <ListItem>
-                <ListItemText primary={item} />
+              <ListItem button onClick={() => onSelect(location)}>
+                <ListItemText primary={location} />
               </ListItem>
+              <Divider />
             </List>
           ))
         )
@@ -37,6 +38,7 @@ HistorySection.defaultProps = { histories: [] };
 
 HistorySection.propTypes = {
   histories: PropTypes.array,
+  onSelect: PropTypes.func.isRequired,
   onHistoryClear: PropTypes.func.isRequired,
 };
 

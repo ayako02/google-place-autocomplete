@@ -20,8 +20,8 @@ const GoogleMap = ({ google, location, address, onSelect, onChange, onTextClear 
   return (
     <>
       <div className="section--header">
-        <div className="logo">
-          <RoomIcon className="logo--icon" />
+        <div className="header--content">
+          <RoomIcon className="header--icon" />
           <h2>Google Location Search</h2>
         </div>
         <Card>

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import PlacesAutocomplete from 'react-places-autocomplete';
 
 import ClearIcon from '@material-ui/icons/Clear';
-import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput } from '@material-ui/core';
+import { FormControl, IconButton, InputAdornment, OutlinedInput } from '@material-ui/core';
 
 import { memo } from 'utils/react';
 
@@ -22,7 +22,6 @@ const AutoCompleteTextInput = ({ address, onSelect, onChange, onTextClear }) => 
         return (
           <>
             <FormControl variant="outlined">
-              {/* <InputLabel htmlFor="outlined-adornment-password">Location</InputLabel> */}
               <OutlinedInput
                 autoComplete
                 autoFocus
