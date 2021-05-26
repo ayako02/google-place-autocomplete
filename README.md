@@ -1,6 +1,6 @@
 # About
 
-This is a google location web app built using ReactJS and Javascript. You can search any place and the marker will pin the exact location automatically on the map.
+This is a google location web app built using `ReactJS` and `Javascript`. You can search any place and the marker will pin the exact location automatically on the map.
 
 Moreover, you may see your past histories below the map, and clicking on each keyword allows you to search the location on the map again.
 
@@ -11,6 +11,10 @@ Moreover, you may see your past histories below the map, and clicking on each ke
 ## Environment
 
 Ensure you have Node version `^14.8.0` to run this project.
+
+## Note
+
+You can consider this project as a ready template or boiletplate. Thus, you will need to create your own Google API key in order to run this project.
 
 ## Getting Started with Create React App
 
