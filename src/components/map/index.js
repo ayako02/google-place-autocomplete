@@ -12,7 +12,7 @@ import { mapContainerStyle, mapStyle } from './style';
 
 import AutoCompleteTextInput from '../autocomplete-input';
 
-const GOOGLE_API_KEY = 'AIzaSyCgqTOvoVMTZxpDNTBjYMphYIraj7jqmyo';
+const GOOGLE_API_KEY = 'YOUR_API_KEY';
 
 const GoogleMap = ({ google, location, address, onSelect, onChange, onTextClear }) => {
   const { lat, lng } = location;
