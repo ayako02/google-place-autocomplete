@@ -4,9 +4,9 @@ This is a google location web app built using ReactJS and Javascript. You can se
 
 Moreover, you may see your past histories below the map, and clicking on each keyword allows you to search the location on the map again.
 
-![Preview 1](https://github.com/ayako02/autocomplete-test/blob/main/src/assets/demo1.png)
-![Preview 2](https://github.com/ayako02/autocomplete-test/blob/main/src/assets/demo2.png)
-![Preview 3](https://github.com/ayako02/autocomplete-test/blob/main/src/assets/demo3.png)
+<img src="https://github.com/ayako02/autocomplete-test/blob/main/src/assets/demo1.png" width="50%">
+<img src="https://github.com/ayako02/autocomplete-test/blob/main/src/assets/demo2.png" width="50%">
+<img src="https://github.com/ayako02/autocomplete-test/blob/main/src/assets/demo3.png" width="50%">
 
 ## Environment
 
